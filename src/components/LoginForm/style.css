@@ -1,0 +1,23 @@
+.FormWrapper {
+  max-width: 25em;
+  margin: -1rem 0;
+}
+
+.FormInput {
+  margin: 1rem 0;
+}
+
+.FormLoader {
+  margin: 0 1em;
+}
+
+.FormFooter {
+  display: flex;
+  align-items: center;
+  margin: 1.5em 0;
+}
+
+.ErrorMessage {
+  font-size: 1em;
+  color: rgb(216, 104, 104);
+}

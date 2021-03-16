@@ -1,0 +1,20 @@
+.InputWrapper {
+  width: auto;
+}
+
+.Input {
+  border: solid 0.1em rgba(131, 130, 130, 0.548);
+  border-radius: 0.7rem;
+  height: 2em;
+  padding: 0.2em 0.5em;
+  box-shadow: 0em 0.1em 0.5em -0.2em rgb(156, 194, 224);
+  display: block;
+  margin: 0.5em 0;
+  width: 100%;
+}
+
+.Label {
+  display: block;
+  font-size: 1rem;
+  color: rgb(58, 131, 165);
+}
