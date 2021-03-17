@@ -2,4 +2,7 @@
   color: rgb(46, 73, 88);
   padding: 1em 0;
   font-size: 1.5em;
+  -webkit-box-shadow: 0 0.2em 0.2em -0.2em rgb(156, 194, 224);
+  -moz-box-shadow: 0 0.2em 0.2em -0.2em rgb(156, 194, 224);
+  box-shadow: 0 0.2em 0.2em -0.2em rgb(156, 194, 224);
 }

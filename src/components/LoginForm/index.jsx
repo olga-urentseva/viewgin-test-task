@@ -6,7 +6,7 @@ import Input from "../Input";
 
 import classes from "./style.css";
 import Loader from "../Loader";
-import { useAuthContext } from "../Contexts/AuthContext";
+import { useAuthContext } from "../contexts/AuthContext";
 
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);

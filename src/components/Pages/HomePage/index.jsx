@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router";
 
 import Container from "../../Container";
-import { useAuthContext } from "../../Contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 import Layout from "../../Layout";
 import MainContainer from "../../MainContainer";
 import PersonalCard from "./PersonalCard";

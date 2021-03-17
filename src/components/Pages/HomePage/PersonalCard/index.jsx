@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router";
 
 import Card from "../../../Card";
-import { useAuthContext } from "../../../Contexts/AuthContext";
+import LineanChart from "../../../charts/LineanChart";
+import { useAuthContext } from "../../../contexts/AuthContext";
 import Loader from "../../../Loader";
 
 import classes from "./style.css";
 
-const PersonalCard = () => {
+const PersonalInfo = () => {
   const authContext = useAuthContext();
   const [isErrorShown, setIsErrorShown] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,10 +42,13 @@ const PersonalCard = () => {
     return <Loader className={classes.PersonalCardLoader} />;
   }
   return (
-    <Card>
-      <span>Hello {login}! Glad to see you!</span>
-    </Card>
+    <>
+      <Card>
+        <span>Hello {login}! Glad to see you!</span>
+      </Card>
+      <LineanChart />
+    </>
   );
 };
 
-export default PersonalCard;
+export default PersonalInfo;
