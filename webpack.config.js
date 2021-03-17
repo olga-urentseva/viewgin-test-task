@@ -33,7 +33,6 @@ module.exports = {
     port: 4200,
     historyApiFallback: true,
   },
-  cache: false,
 
   module: {
     rules: [
