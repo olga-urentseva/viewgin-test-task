@@ -33,6 +33,7 @@ module.exports = {
     port: 4200,
     historyApiFallback: true,
   },
+  cache: false,
 
   module: {
     rules: [
@@ -43,8 +44,8 @@ module.exports = {
       {
         test: /\.jsx?$/i,
         use: "babel-loader",
+        exclude: /node_modules/,
       },
-
       {
         test: /\.css$/i,
         use: [
