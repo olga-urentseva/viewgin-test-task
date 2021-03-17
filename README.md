@@ -32,4 +32,7 @@ Now you can open [localhost:4200](http://localhost:4200/) in browser!
 1. Mobile first
 2. Responsive design
 3. Inclusiveness
+4. CSS Modules
+5. ATOMIC design
+6. React Context instead of Redux
 
