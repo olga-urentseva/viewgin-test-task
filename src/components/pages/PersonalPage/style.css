@@ -1,0 +1,11 @@
+.PersonalPageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin: -1rem 0;
+}
+
+.PersonalPageUserInfo,
+.PersonalPageChart {
+  margin: 1rem 0;
+}

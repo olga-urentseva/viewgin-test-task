@@ -1,0 +1,21 @@
+.LoginPageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.LoginPageForm {
+  border: solid 0.1em rgba(131, 130, 130, 0.11);
+  border-radius: 2em;
+  -webkit-box-shadow: 0em 0.1em 0.5em -0.2em rgb(156, 194, 224);
+  -moz-box-shadow: 0em 0.1em 0.5em -0.2em rgb(156, 194, 224);
+  box-shadow: 0em 0.1em 0.5em -0.2em rgb(156, 194, 224);
+  padding: 2em;
+  width: 100%;
+  max-width: 25em;
+}
+
+@media (min-width: 48em) {
+  .LoginPageWrapper {
+    margin: 5em 0;
+  }
+}
