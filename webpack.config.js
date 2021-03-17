@@ -38,11 +38,11 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/i,
-        use: ["pug-loader"],
+        use: "pug-loader",
       },
       {
         test: /\.jsx?$/i,
-        use: ["babel-loader"],
+        use: "babel-loader",
       },
 
       {
