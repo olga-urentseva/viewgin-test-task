@@ -1,8 +1,8 @@
 .Loader,
 .Loader:after {
   border-radius: 50%;
-  width: 7em;
-  height: 7em;
+  width: 10em;
+  height: 10em;
   display: inline-block;
 }
 .Loader {

@@ -9,6 +9,8 @@
 
 .FormLoader {
   margin: 0 1em;
+  width: 7em;
+  height: 7em;
 }
 
 .FormFooter {

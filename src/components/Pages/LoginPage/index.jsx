@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Redirect } from "react-router";
-import Container from "../../Container";
+import Container from "../../templates/Container";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-import Form from "../../LoginForm";
-import Layout from "../../Layout";
-import MainContainer from "../../MainContainer";
+import Form from "../../molecules/LoginForm";
+import Layout from "../../templates/Layout";
+import MainContainer from "../../templates/MainContainer";
 
 import classes from "./style.css";
 

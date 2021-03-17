@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "../Button";
-import Container from "../Container";
-import { useAuthContext } from "../contexts/AuthContext";
+import Button from "../../atoms/Button";
+import Container from "../../templates/Container";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 import classes from "./style.css";
 

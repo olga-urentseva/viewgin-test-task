@@ -2,14 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router";
 
-import Card from "../../../Card";
-import LineanChart from "../../../charts/LineanChart";
+import Card from "../../../atoms/Card";
 import { useAuthContext } from "../../../contexts/AuthContext";
-import Loader from "../../../Loader";
+import Loader from "../../../atoms/Loader";
+import ErrorMessage from "../../../atoms/ErrorMessage";
 
 import classes from "./style.css";
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ className }) => {
   const authContext = useAuthContext();
   const [isErrorShown, setIsErrorShown] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -36,18 +36,17 @@ const PersonalInfo = () => {
   }, [authContext.userToken]);
 
   if (isErrorShown) {
-    return <span>Something went wrong</span>;
+    return (
+      <ErrorMessage message="Something went wrong, please reload the page" />
+    );
   }
   if (isLoading) {
-    return <Loader className={classes.PersonalCardLoader} />;
+    return <Loader className={classes.PersonalInfoLoader} />;
   }
   return (
-    <>
-      <Card>
-        <span>Hello {login}! Glad to see you!</span>
-      </Card>
-      <LineanChart />
-    </>
+    <Card className={className}>
+      <span>Hello {login}! Glad to see you!</span>
+    </Card>
   );
 };
 

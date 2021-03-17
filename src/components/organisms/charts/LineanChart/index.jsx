@@ -4,14 +4,18 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import Chart from "react-apexcharts";
-import { useAuthContext } from "../contexts/AuthContext";
-import Loader from "../Loader";
+import { useAuthContext } from "../../../contexts/AuthContext";
+import Loader from "../../../atoms/Loader";
+import ErrorMessage from "../../../atoms/ErrorMessage";
 
-const options = {
+import classes from "./style.css";
+import { Redirect } from "react-router";
+import ChartWrapper from "../ChartWrapper";
+
+const STATIC_CHART_OPTIONS = {
   chart: {
     height: 380,
     width: "100%",
-    type: "area",
     animations: {
       initialAnimation: {
         enabled: false,
@@ -23,7 +27,7 @@ const options = {
   },
 };
 
-const LineanChart = () => {
+const LineanChart = ({ ...rest }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [series, setSeries] = useState([]);
@@ -51,18 +55,29 @@ const LineanChart = () => {
           })
         );
       } catch (error) {
-        console.log(error);
+        if (error.status === 403) {
+          return <Redirect to="/" />;
+        }
+        setIsError(true);
       }
     }
     fetchData();
   }, []);
 
-  console.log(series);
+  if (isLoading) {
+    return <Loader className={classes.LineanLoader} />;
+  }
+
+  if (isError) {
+    return (
+      <ErrorMessage message="Something went wrong, please reload the page" />
+    );
+  }
 
   return (
-    <div>
-      {isLoading ? <Loader /> : <Chart options={options} series={series} />}
-    </div>
+    <ChartWrapper {...rest}>
+      <Chart options={STATIC_CHART_OPTIONS} series={series} />
+    </ChartWrapper>
   );
 };
 

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import Button from "../Button";
-import Input from "../Input";
+import Button from "../../atoms/Button";
+import Input from "../../atoms/Input";
+import ErrorMessage from "../../atoms/ErrorMessage";
 
 import classes from "./style.css";
-import Loader from "../Loader";
-import { useAuthContext } from "../contexts/AuthContext";
+import Loader from "../../atoms/Loader";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -51,9 +52,7 @@ const Form = () => {
   return (
     <form className={classes.FormWrapper} onSubmit={onSubmitForm}>
       {isErrorShown ? (
-        <h3 className={classes.ErrorMessage}>
-          Enter correct login and passsword
-        </h3>
+        <ErrorMessage message="Enter correct login and password" />
       ) : null}
       <Input
         type="text"
@@ -82,7 +81,7 @@ const Form = () => {
         <Button type="submit" className={classes.FormButton}>
           Submit
         </Button>
-        {isLoading ? <Loader className={classes.FormLoader} /> : ""}
+        {isLoading ? <Loader className={classes.FormLoader} /> : null}
       </div>
     </form>
   );
